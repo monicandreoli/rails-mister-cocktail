@@ -1,22 +1,26 @@
-<div class="container mt-5">
-    <div class="card p-3">
-    <h5><%= @cocktail.name %></h5>
-    <div class="col">
-            <% @cocktail.doses.each do |dose| %>
-            <div class="row">
-            <%= dose.ingredient.name %> - <%= dose.description %></li>
-             <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
-            <i class="fas fa-trash-alt pl-3"></i>
-            <% end %>
+<div class="d-flex">
+    <div class="background-show"></div>
+    <%= link_to cocktails_path do %>
+    <i class="fas fa-arrow-circle-left arrow"></i>
+    <% end %>
+    <div class="background-black">
+        <div>
+            <h3 class="cocktail-title"><%= @cocktail.name %></h3>
+            <div class="col">
+                <% @cocktail.doses.each do |dose| %>
+                <div class="row justify-content-between">
+                    <p> <%= dose.ingredient.name %> - <%= dose.description %></p>
+                    <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
+                    <i class="fas fa-times pl-3"></i>
+                    <% end %>
+                </div>
+                <% end %>
             </div>
-            <% end %>
-    </div>
-    <div class="d-flex justify-content-around">
-    <%= link_to 'go back', cocktails_path %>
-    <%= link_to 'edit cocktail', edit_cocktail_path(@cocktail) %>
-    <%= link_to 'delete', cocktail_path(@cocktail), method: :delete, data: {confirm: "Are you sure?"}  %>
-    <%= link_to 'add ingredient', new_cocktail_dose_path(@cocktail)  %>
-
-    </div>
+            <div class="d-flex justify-content-between mt-5 border-top text-buttons">
+                <%= link_to 'edit', edit_cocktail_path(@cocktail) %>
+                <%= link_to 'delete', cocktail_path(@cocktail), method: :delete, data: {confirm: "Are you sure?"} %>
+                <%= link_to 'add dose', new_cocktail_dose_path(@cocktail) %>
+            </div>
+        </div>
     </div>
 </div>

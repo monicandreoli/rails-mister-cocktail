@@ -1,0 +1,14 @@
+.button-new {
+    margin-top: 20px;
+    background-color: black;
+    border: none;
+    padding-top: 1em;
+    color: #fff;
+    font-weight: 100;
+    text-decoration: none;
+    box-shadow: none;
+    border-top: 1px solid #fff;
+    &:focus {
+        outline: none;
+    }
+}

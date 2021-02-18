@@ -1,12 +1,25 @@
-<div class="container">
-    <h1>list of cocktails</h1>
-    <%= link_to 'create new cocktail', new_cocktail_path %>
-    <div class="row justify-content-center">
-        <% @cocktails.each do |cocktail| %>
-        <div class="col-3 m-1 card p-3">
-            <%= cocktail.name %>
-            <%= link_to 'see details', cocktail_path(cocktail) %>
-        </div>
+
+<div class="banner">
+    <%= image_tag "logo.png", class: "logo" %>
+</div>
+<div class="back-black">
+    <div class="container d-flex justify-content-between align-items-center pt-5">
+        <h3 class="cocktail-title">COCKTAILS</h3>
+        <%= link_to new_cocktail_path do %>
+        <i class="fas fa-plus"></i>
         <% end %>
+    </div>
+    <div class="container">
+        <div class="justify-content-center">
+            <% @cocktails.each do |cocktail| %>
+            <div>
+                <%= link_to cocktail_path(cocktail) do %>
+                    <div class="card-cocktail py-5 mt-1">
+                        <strong><%= cocktail.name %></strong>
+                    </div>
+                <% end %>
+            </div>
+            <% end %>
+        </div>
     </div>
 </div>

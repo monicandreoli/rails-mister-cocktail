@@ -1,8 +1,15 @@
-<div class="container mt-5">
-    <div class="card p-3">
-    <%= simple_form_for @cocktail do |f| %>
-    <%= f.input :name %>
-    <%= f.submit %>
+
+<div class="d-flex">
+    <div class="background-show"></div>
+    <%= link_to cocktails_path do %>
+    <i class="fas fa-arrow-circle-left arrow"></i>
     <% end %>
+    <div class="background-black">
+        <div>
+            <%= simple_form_for @cocktail do |f| %>
+            <%= f.input :name %>
+            <%= f.submit class: "button-new text-center w-100" %>
+            <% end %>
+        </div>
     </div>
 </div>

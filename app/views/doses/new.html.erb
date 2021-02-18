@@ -1,9 +1,16 @@
-<div class="container mt-5">
-    <div class="card p-3">
-        <%= simple_form_for [@cocktail, @dose ] do |f| %>
-        <%= f.input :description %>
-        <%= f.association :ingredient %>
-        <%= f.submit %>
-        <% end %>
+
+<div class="d-flex">
+    <div class="background-show"></div>
+    <%= link_to cocktail_path(@cocktail) do %>
+    <i class="fas fa-arrow-circle-left arrow"></i>
+    <% end %>
+    <div class="background-black">
+        <div>
+            <%= simple_form_for [@cocktail, @dose ] do |f| %>
+            <%= f.input :description %>
+            <%= f.association :ingredient %>
+            <%= f.submit class: "button-new text-center w-100" %>
+            <% end %>
+        </div>
     </div>
 </div>
