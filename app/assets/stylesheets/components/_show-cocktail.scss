@@ -1,5 +1,7 @@
 .background-show {
     height: 100vh;
+    // position: sticky;
+    // top: 0;
     width: 50%;
     display: flex;
     background-image:
@@ -14,7 +16,7 @@
 }
 
 .background-black {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -24,6 +26,13 @@
     color: #fff;
     width: 50%;
     font-weight: 100;
+    div {
+      min-width: 130px;
+      @media screen and(max-width: 800px) {
+        padding: 0 10px;
+        width: 100%;
+      }
+    }
 }
 
 .arrow {

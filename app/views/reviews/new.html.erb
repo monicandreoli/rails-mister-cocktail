@@ -1,0 +1,15 @@
+<div class="d-flex">
+  <div class="background-show"></div>
+  <%= link_to cocktails_path do %>
+  <i class="fas fa-arrow-circle-left arrow"></i>
+  <% end %>
+  <div class="background-black">
+    <div>
+      <%= simple_form_for [ @cocktail, @review ] do |f| %>
+      <%= f.input :description %>
+      <%= f.input :rating, collection: Review::STARS %>
+      <%= f.submit "Submit review", class: " w-100 button-new" %>
+      <% end %>
+    </div>
+  </div>
+</div>
