@@ -27,6 +27,9 @@
     letter-spacing: 4px;
     font-weight: 100;
     padding-bottom: 1em;
+    @media screen and(max-width: 500px) {
+        font-size: 17px;
+    }
 }
 .card-cocktail {
     color: #fff;
@@ -58,6 +61,10 @@
 }
 .fa-times {
     color: rgba(255, 255, 255, 0.288);
+}
+
+.fa-star {
+    font-size: 10px;
 }
 
 .back-black {

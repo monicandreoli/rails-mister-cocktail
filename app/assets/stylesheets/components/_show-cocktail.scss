@@ -1,9 +1,10 @@
 .background-show {
+    position: sticky;
+    top: 0;
     height: 100vh;
-    // position: sticky;
-    // top: 0;
     width: 50%;
     display: flex;
+    flex: 1;
     background-image:
     linear-gradient(
       rgba(0, 0, 0, 0.5),
@@ -13,23 +14,28 @@
     background-size: cover;
     background-position: right;
     background-attachment: fixed;
+
+    @media screen and(max-width: 600px) {
+      display: none;
+    }
 }
 
 .background-black {
     min-height: 100vh;
     display: flex;
+    flex: 1;
     flex-direction: column;
-    flex-grow: 1;
     align-items: center;
     justify-content: center;
     background-color: black;
     color: #fff;
     width: 50%;
+;
+    padding: 100px 20px;
     font-weight: 100;
     div {
       min-width: 130px;
       @media screen and(max-width: 800px) {
-        padding: 0 10px;
         width: 100%;
       }
     }
@@ -40,6 +46,9 @@
   position: absolute;
   font-size: 25px;
   transform: translate(-10px, 0);
+  @media screen and(max-width: 600px) {
+    transform: translate(20px, 0);
+  }
 }
 
 .text-buttons a {
@@ -52,3 +61,6 @@
   position: relative;
 }
 
+.single-review {
+  min-height: 50px;
+}

@@ -9,7 +9,7 @@ class Cocktail < ApplicationRecord
     reviews_array = []
     reviews.each { |review| reviews_array << review.rating }
     if reviews.any?
-    reviews_array.sum / reviews_array.size
+      reviews_array.sum / reviews_array.size
     end
   end
 end
