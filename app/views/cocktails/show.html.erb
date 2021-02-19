@@ -5,17 +5,17 @@
     <% end %>
     <div class="background-black">
         <div>
-        <div class="d-flex w-100">
-            <h3 class="cocktail-title"><%= @cocktail.name %></h3>
-            <div class="d-flex flex-row justify-content-end">
-                <%= link_to edit_cocktail_path(@cocktail) do %>
-                <i class="fas fa-pencil-alt pr-3"></i>
-                <% end %>
-                <%= link_to cocktail_path(@cocktail), method: :delete, data: {confirm: "Are you sure?"} do %>
-                <i class="fas fa-trash"></i>
-                <% end %>
+            <div class="d-flex w-100">
+                <h3 class="cocktail-title"><%= @cocktail.name %></h3>
+                <div class="d-flex flex-row justify-content-end">
+                    <%= link_to edit_cocktail_path(@cocktail) do %>
+                    <i class="fas fa-pencil-alt pr-3"></i>
+                    <% end %>
+                    <%= link_to cocktail_path(@cocktail), method: :delete, data: {confirm: "Are you sure?"} do %>
+                    <i class="fas fa-trash"></i>
+                    <% end %>
+                </div>
             </div>
-        </div>
             <div class="col">
                 <% @cocktail.doses.each do |dose| %>
                 <div class="row justify-content-between">
@@ -30,28 +30,27 @@
                 <%= link_to 'add dose', new_cocktail_dose_path(@cocktail), class: "px-3"%>
                 <%= link_to 'add a review', new_cocktail_review_path(@cocktail)  %>
             </div>
-<div class="d-flex flex-column w-100">
- <% if @cocktail.reviews.count > 0 %>
-        <h3 class="cocktail-title mt-5"><%= "Reviews" %></h3>
-        <% reviews = @cocktail.reviews  %>
-        <div class="d-flex flex-row justify-content-around">
-            <% reviews.each do |review|  %>
+            <div class="d-flex flex-column w-100">
+                <% if @cocktail.reviews.count > 0 %>
+                <h3 class="cocktail-title mt-5"><%= "Reviews" %></h3>
+                <% reviews = @cocktail.reviews  %>
+                <div class="d-flex flex-row justify-content-around">
+                    <% reviews.each do |review|  %>
 
-                <%= review.description  %> <br>
-                <div>
-                <% review.rating.times do  %>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <% end  %>
+                    <%= review.description  %> <br>
+                    <div>
+                        <% review.rating.times do  %>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <% end  %>
+                    </div>
+                    <%= link_to review_path(review), method: :delete, data: { confirm: "Are you sure?" } do %>
+                    <i class="fas fa-trash"></i>
+                    <% end %>
+                    <% end %>
+
+                    <% end  %>
                 </div>
-                <%= link_to review_path(review), method: :delete, data: { confirm: "Are you sure?" } do %>
-                 <i class="fas fa-trash"></i>
-                <% end %>
-                <% end %>
-
-            <% end  %>
-        </div>
-</div>
+            </div>
         </div>
     </div>
 </div>
-

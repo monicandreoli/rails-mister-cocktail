@@ -10,16 +10,24 @@
         <% end %>
     </div>
     <div class="container">
-        <div class="justify-content-center">
+        <div class="row justify-content-center">
             <% @cocktails.each do |cocktail| %>
-            <div>
                 <%= link_to cocktail_path(cocktail) do %>
+            <div class="col-lg-4 col-md-6 cocktail-card">
+            <div class="card-image mt-5"></div>
                     <div class="card-cocktail py-5 mt-1">
-                        <strong><%= cocktail.name %></strong>
+                        <strong class="cocktail-title"><%= cocktail.name %></strong>
                     </div>
                 <% end %>
             </div>
             <% end %>
         </div>
     </div>
+    <footer class="d-flex justify-content-around mt-5">
+    <ul class="p-0 d-inline-flex">
+    <li><i class="fab fa-facebook-square pr-4"></i></li>
+    <li><i class="fab fa-instagram pr-4"></i></li>
+    <li><i class="fab fa-twitter"></i></li>
+    </ul>
+    </footer>
 </div>
