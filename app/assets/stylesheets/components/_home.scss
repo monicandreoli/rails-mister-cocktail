@@ -39,11 +39,12 @@
 }
 
 .box-cocktail {
-    box-shadow: 0px 0px 10px rgba(146, 146, 146, 0.2);
+    box-shadow: 0px 0px 3px rgba(146, 146, 146, 0.2);
 
 }
 
 .card-image {
+    border-radius: 4px;
     min-height: 200px;
     background-image:
     linear-gradient(
@@ -55,6 +56,13 @@
     background-position: center;
 }
 
+
+.image-user {
+    border-radius: 4px;
+    min-height: 250px;
+    background-size: cover;
+    background-position: center;
+}
 
 .fa-plus, .fa-arrow-circle-left, .fa-pencil-alt, .fa-trash, .fa-facebook-square, .fa-instagram, .fa-twitter{
     color: #fff;

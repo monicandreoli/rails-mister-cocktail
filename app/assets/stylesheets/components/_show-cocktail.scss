@@ -7,14 +7,29 @@
     flex: 1;
     background-image:
     linear-gradient(
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 7)
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 5)
     ),
     url("cocktail1.jpg");
     background-size: cover;
     background-position: right;
     background-attachment: fixed;
 
+    @media screen and(max-width: 600px) {
+      display: none;
+    }
+}
+
+.background-user-image {
+  position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 50%;
+    display: flex;
+    flex: 1;
+    background-size: cover;
+    background-position: right;
+    background-attachment: fixed;
     @media screen and(max-width: 600px) {
       display: none;
     }

@@ -1,9 +1,14 @@
 <div class="d-flex">
+    <% if @cocktail.photo.attached? %>
+    <div class="background-user-image" style="background-image: linear-gradient(
+      rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 5)), url('<%= cl_image_path @cocktail.photo.key, crop: :fill %>')"></div>
+    <% else %>
     <div class="background-show"></div>
-    <div>
-    <%= link_to cocktails_path do %>
-    <i class="fas fa-arrow-circle-left arrow"></i>
     <% end %>
+    <div>
+        <%= link_to cocktails_path do %>
+        <i class="fas fa-arrow-circle-left arrow"></i>
+        <% end %>
     </div>
     <div class="background-black">
         <div>
@@ -35,23 +40,23 @@
             <% if @cocktail.reviews.count > 0 %>
             <ul class="d-flex flex-column w-100">
                 <h3 class="cocktail-title mt-5"><%= "Reviews" %></h3>
-                    <% reviews = @cocktail.reviews  %>
-                        <% reviews.each do |review|  %>
-                    <li class="list-inline single-review mt-4">
-                    <div class="d-flex flex-row justify-content-between">
-                            <div class="d-flex flex-column">
+                <% reviews = @cocktail.reviews  %>
+                <% reviews.each do |review|  %>
+                <li class="list-inline single-review mt-4">
+                    <div class="d-flex flex-row justify-content-between align-items-center">
+                        <div class="d-flex flex-column">
                             <%= review.description  %>
                             <div class="d-flex flex-row">
-                            <% review.rating.times do  %>
-                                    <i class="fa fa-star pt-2" aria-hidden="true"></i>
+                                <% review.rating.times do  %>
+                                <i class="fa fa-star pt-2" aria-hidden="true"></i>
                                 <% end  %>
                             </div>
-                            </div>
-                                <%= link_to review_path(review), method: :delete, data: { confirm: "Are you sure?" } do %>
-                                    <i class="fas fa-trash"></i>
-                                <% end %>
+                        </div>
+                        <%= link_to review_path(review), method: :delete, data: { confirm: "Are you sure?" } do %>
+                        <i class="fas fa-trash"></i>
                         <% end %>
-                    <% end %>
+                        <% end %>
+                        <% end %>
                     </div>
                 </li>
             </ul>

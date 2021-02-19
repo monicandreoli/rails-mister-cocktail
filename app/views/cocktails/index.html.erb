@@ -13,7 +13,15 @@
             <% @cocktails.each do |cocktail| %>
             <%= link_to cocktail_path(cocktail) do %>
             <div class="col-lg-3 col-md-5 box-cocktail m-2 mt-5">
+
+                <% if cocktail.photo.attached? %>
+                <div class="image-user mt-5"
+                    style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo.key %>')">
+                </div>
+                <% else %>
                 <div class="card-image mt-5"></div>
+                <% end %>
+
                 <div class=" d-flex flex-column card-cocktail py-5">
                     <strong class="cocktail-title"><%= cocktail.name %></strong>
                     <% if cocktail.reviews.any? %>
@@ -30,7 +38,7 @@
             <% end %>
         </div>
     </div>
-    <footer class="d-flex justify-content-around my-5">
+    <footer class="d-flex justify-content-around py-5">
         <ul class="p-0 d-inline-flex">
             <li><i class="fab fa-facebook-square pr-4"></i></li>
             <li><i class="fab fa-instagram pr-4"></i></li>
