@@ -8,7 +8,6 @@
 require 'json'
 require 'open-uri'
 
-Cocktail.create(name: "Negroni")
 Cocktail.create(name: "Long Island Ice Tea")
 Cocktail.create(name: "Margarita")
 Cocktail.create(name: "Cosmopolitan")
@@ -16,7 +15,6 @@ Cocktail.create(name: "Vodka Martini")
 Cocktail.create(name: "Pina Colada")
 Cocktail.create(name: "Gin Fizz")
 Cocktail.create(name: "Old Fashioned")
-
 
 
 Ingredient.destroy_all
